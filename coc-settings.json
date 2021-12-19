@@ -1,0 +1,31 @@
+{
+    "languageserver": {
+        "R": {
+            "enable": true,
+            "command": "R.exe",
+            "args": [
+                "--slave",
+                "-e",
+                "languageserver::run()"
+            ],
+            "filetypes": [
+                "r"
+            ]
+        },
+        "clangd": {
+            "command": "clangd.exe",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "c++",
+                "objc",
+                "objcpp"
+            ]
+        }
+    }
+}
