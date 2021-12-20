@@ -1,7 +1,19 @@
 set nocompatible
 
 call plug#begin('~/Appdata/Local/nvim/plugged')
-
+Plug 'rcarriga/nvim-notify'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-sneak'
 Plug 'machakann/vim-highlightedyank'
@@ -27,16 +39,17 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
+Plug 'simrat39/rust-tools.nvim'
 
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
+set completeopt=menu,menuone,noselect
 set guifont=JetBrainsMono:h15
 set background=dark
 set hidden
-set runtimepath^=~/AppData/Local/nvim/plugged/coc.nvim
 set number
 set title
 set autowrite
@@ -98,7 +111,6 @@ autocmd VimEnter *
 
 
 "Nvim Tree
-let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
@@ -183,23 +195,19 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
 """
-lua << EOF
-    require("which-key").setup {
-    
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-    }
-    require("bufferline").setup{}
-    require'nvim-tree'.setup {}
-    
-EOF
-
+"Lua configs
+lua require("dipto.which-key")
+lua require("dipto.bufferline")
+lua require("dipto.nvim-tree")
+lua require("dipto.nvim-treesitter")
+lua require("dipto.completion")
+lua require("dipto.rust-nvim-tools")
+lua require("dipto.notify")
 
 " Mappings keys
 nnoremap <leader>nt :NvimTreeToggle<CR>
 nnoremap <leader>nr :NvimTreeRefresh<CR>
-nnoremap <leader>nf :NvimTreeFocus
+nnoremap <leader>nf :NvimTreeFocus<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>g :Goyo<CR>
