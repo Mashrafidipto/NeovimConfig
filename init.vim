@@ -1,8 +1,7 @@
 set nocompatible
 
 call plug#begin('~/Appdata/Local/nvim/plugged')
-Plug 'rcarriga/nvim-notify'
-Plug 'nvim-lua/plenary.nvim'
+
 Plug 'mfussenegger/nvim-dap'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -202,7 +201,6 @@ lua require("dipto.nvim-tree")
 lua require("dipto.nvim-treesitter")
 lua require("dipto.completion")
 lua require("dipto.rust-nvim-tools")
-lua require("dipto.notify")
 
 " Mappings keys
 nnoremap <leader>nt :NvimTreeToggle<CR>
