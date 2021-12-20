@@ -1,0 +1,2 @@
+# NeovimConfig
+A novim config 
