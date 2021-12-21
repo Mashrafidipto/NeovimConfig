@@ -2,7 +2,7 @@ set nocompatible
 
 call plug#begin('~/Appdata/Local/nvim/plugged')
 
-Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -195,6 +195,7 @@ let g:neoformat_basic_format_trim = 1
 
 """
 "Lua configs
+lua require("dipto.custom")
 lua require("dipto.which-key")
 lua require("dipto.bufferline")
 lua require("dipto.nvim-tree")
