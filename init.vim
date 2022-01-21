@@ -1,6 +1,6 @@
 set nocompatible
 
-call plug#begin('~/Appdata/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -27,7 +27,6 @@ Plug 'aliou/bats.vim'
 Plug 'jamespwilliams/bat.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'folke/which-key.nvim'
-Plug 'sheerun/vim-polyglot'
 Plug 'bryanmylee/vim-colorscheme-icons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
@@ -54,8 +53,6 @@ set number
 set title
 set autowrite
 set timeoutlen=1000
-set shell=cmd
-set clipboard^=unnamed,unnamedplus
 set encoding=utf-8
 set hidden
 set nobackup
